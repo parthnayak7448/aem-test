@@ -4,6 +4,7 @@ main .banner-container>div {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 100%;
 }
 
 main .banner-container {
