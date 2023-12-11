@@ -1,0 +1,56 @@
+main .banner-container>div {
+    max-width: unset;
+    background-color: #404041;
+}
+
+main .banner-container {
+    padding: 0;
+}
+
+main .banner {
+    position: relative;
+    padding: 32px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+    gap: 16px;
+    color: white;
+    font-family: Proxima Nova;
+}
+
+main .banner h2,
+h3 {
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.banner div {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.banner .myButton {
+    cursor: pointer;
+    background-color: white;
+    color: #404041;
+    display: flex;
+    height: 54px;
+    padding: 18px 23px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.myButton .btnText {
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
