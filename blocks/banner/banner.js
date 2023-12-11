@@ -1,33 +1,27 @@
 export default function decorate(block) {
-    console.log('block', block);
-     // Get the children of the parent div
-     var children = block.children;
-     console.log('block', children);
-     // Loop through the children and assign a class
-     for (var i = 0; i < children.length; i++) {
-       var child = children[i];
-       console.log('block', child);
-       // Assign a class to each child
-       if(i ==2){
-       child.classList.add('myButton');
-       child.addEventListener("click", function() {
-        // Your button click logic here
-        alert("Button Clicked!");
-      });
-      child.children[0].classList.add('btnText');
-       }
-     }
-    // block.style.textAlign = 'center';
-    // block.style.position = 'relative';
-    // block.style.left = '50%';
-    // block.style.transform = 'translateX(-50%)';
-    // block.style.color = '#FFF';
+    // Extract children of the parent div
+    const children = block.children;
 
-    // children[0].style.fontSize = '45px';
-    // children[0].style.lineHeight = '110%';
-    // children[0].style.fontweight = '700';
-    // children[1].style.fontSize = '18px';
-    // children[1].style.paddingTop = '16px';
+    // Set background image based on the first child's picture
+    const firstChild = children[0];
+    if (firstChild) {
+        const pic = firstChild.querySelector('picture');
+
+        if (pic) {
+            const img = pic.querySelector('img');
+
+            if (img) {
+                const parentElementStyle = block.parentElement.style;
+                parentElementStyle.backgroundImage = `url(${img.src})`;
+                parentElementStyle.backgroundRepeat = 'no-repeat';
+                parentElementStyle.backgroundSize = 'cover';
+                parentElementStyle.backgroundPosition = 'center';
+                pic.style.display = 'none';
+            }
+        }
+    }
+
+    // Change heading size based on window width
     function changeHeadingSize() {
         Array.from(block.getElementsByTagName(window.innerWidth <= 360 ? 'h2' : 'h3')).forEach(function (heading) {
             if (window.innerWidth <= 360) {
